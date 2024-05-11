@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="script.js"></script>
+  <title>PPI</title>
+  <style>
+    #toggleText {
+      color: #36a7f3;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .resultContainer {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    select {
+      border: 1px solid black !important;
+    }
+
+    input {
+      border: 1px solid black !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-5 col-lg-6">
+    <h2>PPI</h2>
+    <p>Estimate the number of pages per inch of paper (PPI), based on the sheet’s thickness (caliper).</p>
+    <p id="toggleText" onclick="toggleVisibility()">SHOW FORMULA</p>
+    <div id="contentParagraph" style="display: none;">
+      <p>
+        <span style="color: #36a7f3;">
+          2 / Caliper = <span style="font-weight: bold;">Pages per Inch (PPI)</span>
+        </span><br />
+        The pages per inch (PPI) for 100# gloss coated cover with an average caliper of .0095 inches per sheet is: 2 /
+        .0095 = <span style="font-weight: bold;">211 PPI</span><br />
+      </p>
+    </div>
+    <form onsubmit="calculatePagesPerInch(event)">
+      <div class="row">
+
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="basisWeight" class="form-label">Caliper</label>
+            <input type="text" id="caliper" class="form-control" placeholder="Points">
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Calculate</button>
+      <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear</button>
+    </form>
+    <div class="resultContainer mt-3">
+      <p class="result">Result: <span id="result">0</span></p>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+#toggleText {
+  color: #36a7f3;
+  cursor: pointer;
+  font-weight: bold;
+}
+select {
+  border: 1px solid black !important;
+}
+input {
+  border: 1px solid black !important;
+}
+.resultContainer {
+  font-weight: bold;
+  font-size: 20px;
+}
+.custom-select {
+  position: relative;
+}
+
+.arrow {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #36a7f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.arrow i {
+  color: white;
+}

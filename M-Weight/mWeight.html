@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="mWeight.js"></script>
+  <link rel="stylesheet" href="mWeight.css">
+  <title>M-Weight Calculator</title>
+</head>
+
+<body>
+  <div class="container mt-5 col-lg-6">
+    <h2>M-Weight</h2>
+    <p>Determine the weight of 1,000 sheets (M-weight) of a given sheet size, using length, width, and basis weight.</p>
+    <p id="toggleText" onclick="toggleVisibility()">SHOW FORMULA</p>
+    <div id="contentParagraph" style="display: none;">
+      <p>
+        <span style="color: #36a7f3;">
+          (Sheet dimen.) X Basis wt. / (Area of basic size) = Rounded ream wt. X 2 = <span
+            style="font-weight: bold;">M-Weight</span>
+        </span><br />
+        The M-weight of a sheet of 11×17” book paper with a basis weight of 70 lbs. is: (11×17) X 70 / (25×38) = 13.78 X
+        2 = <span style="font-weight: bold;">27.56</span><br />
+        The area of the given sheet size is 11 x 17 = 187 inches². Since this is less than 336 inches², ream weight
+        should be rounded to the nearest hundredth of a pound.
+      </p>
+    </div>
+    <form onsubmit="calculateMWeight(event)">
+      <div class="row">
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="paperGradeSize" class="form-label">Paper Grade And Size </label>
+            <div class="custom-select">
+              <select id="paperGradeSize" class="form-control">
+                <option value="">Grade and Size</option>
+                <option value="17 x 22">Bond (17 x 22)</option>
+                <option value="25 x 38">Book And Offset (25 x 38)</option>
+                <option value="24 x 36">Tag (24 x 36)</option>
+                <option value="25.5 x 30.5">Index (25.5 x 30.5)</option>
+                <option value="22.5 x 28.5">Vellum Bristol (22.5 x 28.5)</option>
+                <option value="24 x 36">C1S and C2S SBS (24 x 36)</option>
+                <option value="25 x 38">Litho C1S Label (25 x 38)</option>
+                <option value="20 x 26">Opaque Cover (20 x 26)</option>
+                <option value="288">Recycled Board (288 sq.in.)</option>
+              </select>
+              <div class="arrow">
+                <i class="fa fa-chevron-down"></i>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="basisWeight" class="form-label">Basis Weight</label>
+            <input type="text" id="basisWeight" class="form-control" placeholder="Pounds">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="basisWeight" class="form-label">Given Sheet Size (length)</label>
+            <input type="text" id="sheetSizeL" class="form-control" placeholder="Length In Inches">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="basisWeight" class="form-label">Given Sheet Size (width)</label>
+            <input type="text" id="sheetSizeW" class="form-control" placeholder="Width In Inches">
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Calculate</button>
+      <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear</button>
+    </form>
+    <div class="resultContainer mt-3">
+      <p class="result">Result: <span id="result">0</span></p>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

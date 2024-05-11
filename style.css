@@ -1,0 +1,88 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4; /* Softer background for easier viewing */
+}
+
+.container,
+.container2 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  /* min-height: 90vh;   */
+}
+
+h2 {
+  font-size: 2rem; /* Responsive font size */
+  color: #333; /* Darker color for better readability */
+  text-align: start; /* Center align for better aesthetics */
+  margin-bottom: 20px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: start; /* Center items for better aesthetics */
+  justify-content: space-between;
+  height: 100%;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #36a7f3;
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+  background-color: white;
+  color: #36a7f3;
+}
+
+.fa {
+  font-size: 20px;
+}
+
+@media (max-width: 992px) {
+  h2 {
+    font-size: 1.75rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+  .container,
+  .container2 {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  h2 {
+    font-size: 1.25rem;
+  }
+  .col-md-6 {
+    padding: 0; /* Adjust padding for smaller screens */
+  }
+  .card {
+    margin: 10px;
+    padding: 10px;
+  }
+}

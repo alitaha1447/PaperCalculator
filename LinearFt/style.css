@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: auto;
+  background-color: aquamarine;
+}
+
+div {
+  height: auto;
+  width: auto;
+  border: 1px solid red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+select {
+  border: 1px solid black !important;
+}
+input {
+  border: 1px solid black !important;
+}
